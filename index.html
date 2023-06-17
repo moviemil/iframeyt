@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>YT Iframe API</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    #youtube-iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <iframe id="youtube-iframe" src="" frameborder="0" allowfullscreen></iframe>
+
+  <script>
+    var url = window.location.href;
+    if (url.includes('?=')) {
+      var videoId = url.split('?=')[1];
+      var videoLink = 'https://www.youtube.com/embed/' + videoId;
+      document.getElementById('youtube-iframe').src = videoLink;
+    }
+  </script>
+</body>
+</html>
